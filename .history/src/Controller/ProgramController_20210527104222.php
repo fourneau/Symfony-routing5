@@ -19,13 +19,15 @@ class ProgramController extends AbstractController
 
 {
  /**
-     * @Route("/", name="index")
+     * @Route("/programs/", name="program_index")
      */
     public function index(): Response
 
     {
         $programs = $this->getDoctrine()
+
              ->getRepository(Program::class)
+
              ->findAll();
 
         return $this->render('/program/index.html.twig', [
@@ -35,38 +37,15 @@ class ProgramController extends AbstractController
          ]);
     }
 /**
- * Getting a program by id
- *
- * @Route("/show/{id<^[0-9]+$>}", name="show")
- * @return Response
- */
+     * @Route("/{id}",requirements={"id"="\d+"}, methods={"GET"}, name="show")
+     */
+    public function show(int $id): Response
 
-public function show(int $id):Response
+    {
+        return $this->render('/program/show.html.twig', [
 
-{
-
-    $program = $this->getDoctrine()
-
-        ->getRepository(Program::class)
-
-        ->findOneBy(['id' => $id]);
-
-
-    if (!$program) {
-
-        throw $this->createNotFoundException(
-
-            'No program with id : '.$id.' found in program\'s table.'
-
-        );
-
+            'id' => $id,
+     
+         ]);
     }
-
-    return $this->render('program/show.html.twig', [
-
-        'program' => $program,
-
-    ]);
-
-}
 }

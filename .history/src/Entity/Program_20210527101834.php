@@ -22,10 +22,7 @@ class Program
      */
     private $title;
 
-    /**
-    * @ORM\Column(type="text")
-    */
-    private $summary;
+    /**      * @ORM\Column(type="text")      */     private $summary;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)

@@ -23,8 +23,7 @@ class Program
     private $title;
 
     /**
-    * @ORM\Column(type="text")
-    */
+    * @ORM\Column(type="text")      */
     private $summary;
 
     /**

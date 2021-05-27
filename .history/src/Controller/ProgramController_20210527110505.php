@@ -19,7 +19,7 @@ class ProgramController extends AbstractController
 
 {
  /**
-     * @Route("/", name="index")
+     * @Route("/programs/", name="program_index")
      */
     public function index(): Response
 
