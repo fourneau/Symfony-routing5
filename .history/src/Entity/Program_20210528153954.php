@@ -35,13 +35,13 @@ class Program
     private $poster;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="programs")
+     * @ORM\ManyToOne(targetEntity=Category::class)
      * @ORM\JoinColumn(nullable=false)
      */
     private $category;
 
     /**
-     * @ORM\OneToMany(targetEntity=Season::class, mappedBy="programs")
+     * @ORM\OneToMany(targetEntity=Season::class, incBy="programs")
      */
     private $seasons;
 
