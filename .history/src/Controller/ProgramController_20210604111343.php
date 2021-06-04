@@ -17,9 +17,7 @@ use Symfony\Component\HttpFoundation\Response;
 class ProgramController extends AbstractController
 
 {
- /**
-     * @Route("/", name="index")
-     */
+ 
     public function index(): Response
 
     {
