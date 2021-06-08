@@ -4,14 +4,11 @@
 
 namespace App\Controller;
 
-use Symfony\Component\HttpFoundation\Request;
-
 use Symfony\Component\Routing\Annotation\Route;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 use Symfony\Component\HttpFoundation\Response;
-
 
 use App\Form\ProgramType;
 
@@ -42,37 +39,7 @@ class ProgramController extends AbstractController
             'programs' => $programs
          ]);
     }
-    /**
-     * The controller for the program add form
-     *
-     * @Route("/new", name="new")
-     */
-    public function new(Request $request) : Response
-    {
-        // Create a new Program Object
-        $program = new Program();
-        // Create the associated Form
-        $form = $this->createForm(ProgramType::class, $program);
-        // Get data from HTTP request
-        $form->handleRequest($request);
-        // Was the form submitted ?
-        if ($form->isSubmitted() && $form->isValid()) {
-            // Deal with the submitted data
-            // Get the Entity Manager
-            $entityManager = $this->getDoctrine()->getManager();
-            // Persist Category Object
-            $entityManager->persist($program);
-            // Flush the persisted object
-            $entityManager->flush();
-            // Finally redirect to programs list
-            return $this->redirectToRoute('program_index');
-            // And redirect to a route that display the result
-        }
-        // Render the form
-        return $this->render('program/new.html.twig', [
-            "form" => $form->createView(),
-        ]);
-    }
+    
 /**
  * Getting a program by id
  *
