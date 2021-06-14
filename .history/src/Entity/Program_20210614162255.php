@@ -31,13 +31,11 @@ class Program
 
     /**
     * @ORM\Column(type="text")
-    * @Assert\NotBlank(message="veuillez remplir ce champ")
     */
     private $summary;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * @Assert\Length(max="255", maxMessage="Le Lien {{ value }} est trop long, il ne doit pas dépasser {{ limit }} caractères")
      */
     private $poster;
 

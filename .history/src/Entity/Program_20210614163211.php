@@ -31,7 +31,7 @@ class Program
 
     /**
     * @ORM\Column(type="text")
-    * @Assert\NotBlank(message="veuillez remplir ce champ")
+    * @Assert\NotBlank(message="veuillez obligatoirement remplir ce champ")
     */
     private $summary;
 

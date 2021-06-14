@@ -25,19 +25,17 @@ class Program
     /**
      * @ORM\Column(type="text")
      * @Assert\NotBlank(message="veuillez remplir ce champ")
-     * @Assert\Length(max="255", maxMessage="Le titre saisi est trop long, il ne doit pas dépasser {{ limit }} caractères")
+     * @Assert\Length(max="255", maxMessage="Le titre saisi est trop long, il ne devrait pas dépasser {{ limit }} caractères")
      */
     private $title;
 
     /**
     * @ORM\Column(type="text")
-    * @Assert\NotBlank(message="veuillez remplir ce champ")
     */
     private $summary;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * @Assert\Length(max="255", maxMessage="Le Lien {{ value }} est trop long, il ne doit pas dépasser {{ limit }} caractères")
      */
     private $poster;
 

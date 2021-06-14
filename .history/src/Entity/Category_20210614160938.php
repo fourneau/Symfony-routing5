@@ -7,10 +7,8 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Symfony\Component\Validator\Constraints as Assert;
-
 /**
  * @ORM\Entity(repositoryClass=CategoryRepository::class)
- * @Assert\EnableAutoMapping()
  */
 class Category
 {
@@ -23,8 +21,6 @@ class Category
 
     /**
      * @ORM\Column(type="string", length=100)
-     * @Assert\NotBlank(message="veuillez remplir ce champ")
-     * @Assert\Length(max="100", maxMessage="La catégorie saisie {{ value }} est trop longue, elle ne doit pas dépasser {{ limit }} caractères")
      */
     private $name;
 
