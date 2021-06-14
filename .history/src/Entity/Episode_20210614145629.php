@@ -18,7 +18,7 @@ class Episode
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Season::class, inversedBy="episodes")
+     * @ORM\ManyToOne(targetEntity=eason::class, inversedBy="episodes")
      */
     private $season;
 
