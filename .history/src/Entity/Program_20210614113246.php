@@ -43,15 +43,9 @@ class Program
     private $category;
 
     /**
-     * @ORM\OneToMany(targetEntity=Season::class, mappedBy="programs")
+     * @ORM\OneToMany(targetEntity=Season::class, mappedBy="program")
      */
     private $seasons;
-
-    public function __toString()
-
-    {
-        return $this->title;
-    }
 
     public function __construct()
     {

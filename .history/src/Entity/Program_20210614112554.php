@@ -47,12 +47,6 @@ class Program
      */
     private $seasons;
 
-    public function __toString()
-
-    {
-        return $this->title;
-    }
-
     public function __construct()
     {
         $this->seasons = new ArrayCollection();
@@ -134,7 +128,7 @@ class Program
     {
         if (!$this->seasons->contains($season)) {
             $this->seasons[] = $season;
-            $season->setProgramId($this);
+            $season->setProgram($this);
         }
 
         
@@ -145,8 +139,8 @@ class Program
     {
         if ($this->seasons->removeElement($season)) {
             // set the owning side to null (unless already changed)
-            if ($season->getProgramId() === $this) {
-                $season->setProgramId(null);
+            if ($season->getProgram() === $this) {
+                $season->setProgram(null);
             }
         }
 

@@ -49,10 +49,7 @@ class Program
 
     public function __toString()
 
-    {
-        return $this->title;
-    }
-
+    {return $this->title;}
     public function __construct()
     {
         $this->seasons = new ArrayCollection();

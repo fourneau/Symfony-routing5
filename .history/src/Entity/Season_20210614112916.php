@@ -132,16 +132,4 @@ class Season
 
         return $this;
     }
-
-    public function getPrograms(): ?Program
-    {
-        return $this->programs;
-    }
-
-    public function setPrograms(?Program $programs): self
-    {
-        $this->programs = $programs;
-
-        return $this;
-    }
 }
