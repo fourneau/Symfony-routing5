@@ -23,7 +23,7 @@ class ProgramType extends AbstractType
                 'multiple' => true,
                 'expanded' => true,
                 'by_reference' => false,
-            ])*/;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)
