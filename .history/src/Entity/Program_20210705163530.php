@@ -58,10 +58,12 @@ class Program
     private $actors;
 
     /**
+     * 
+     * @ORM\GeneratedValue
      * @ORM\Column(type="string", length=255)
      */
     private $slug;
-
+    
     public function __toString()
 
     {

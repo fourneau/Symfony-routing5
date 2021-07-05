@@ -53,19 +53,16 @@ class ProgramController extends AbstractController
      */
     public function new(Request $request, Slugify $slugify) : Response
     {
-        
+        // Create a new Program Object
         $program = new Program();
-        
+        // Create the associated Form
         $form = $this->createForm(ProgramType::class, $program);
-
+        // Get data from HTTP request
         $form->handleRequest($request);
-
+        // Was the form submitted ?
         if ($form->isSubmitted() && $form->isValid()) {
             
             $entityManager = $this->getDoctrine()->getManager();
-
-            $slug = $slugify->generate($program->getTitle());
-            $program->setSlug($slug);
             
             $entityManager->persist($program);
             
