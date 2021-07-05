@@ -96,7 +96,7 @@ public function show(Program $program): Response
     /**
      * Getting a season by id
      * 
-     * @Route("/{slug}/seasons/{seasonId}", name="season_show")
+     * @Route("/{}/seasons/{seasonId}", name="season_show")
      * @return Response
      */
     public function showSeason(Program $programId, Season $seasonId): Response
@@ -110,8 +110,7 @@ public function show(Program $program): Response
     /**
      * Getting an episode by id
      * 
-     * @Route("/{slug}/seasons/{seasonId}/episodes/{episodeSlug}", name="episode_show")
-     * @ParamConverter("episode", class="App\Entity\Episode", options={"mapping": {"episodeSlug": "slug"}})
+     * @Route("/{programId}/seasons/{seasonId}/episodes/{episodeId}", name="episode_show")
      * @return Response
      */
     public function showEpisode(Program $programId, Season $seasonId, Episode $episodeId): Response
