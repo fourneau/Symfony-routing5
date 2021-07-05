@@ -1,26 +1,25 @@
 <?php
 
-
 namespace App\DataFixtures;
 
-
-use App\Entity\Category;
-
+use App\Entity\Program;
 use Doctrine\Bundle\FixturesBundle\Fixture;
-
+use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
 
 
-class CategoryFixtures extends Fixture
-
+class ProgramFixtures extends Fixture implements DependentFixtureInterface
 {
-    const CATEGORIES =[
-        'Horreur',
-        'comédie',
-        'Dramatique',
-        'Documentaire'
-        
 
+    const PROGRAMS =[
+        'Walking dead',
+        'The Haunting Of Hill House',
+        'American Horror Story',
+        'Love Death And Robots',
+        'Penny Dreadful', 
+        'Locke & Key',
+        'Fear the Walking Dead'
+        
     ];
 
     public function load(ObjectManager $manager)

@@ -18,7 +18,7 @@ class CategoryFixtures extends Fixture
         'Horreur',
         'comédie',
         'Dramatique',
-        'Documentaire'
+        'Documentaire',
         
 
     ];
